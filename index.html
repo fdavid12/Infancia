@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asociación Amor y Paz de Bienestar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 2px solid #ccc;
+            background-color: #3A913F;
+            color: white;
+        }
+
+        header img {
+            height: 90px;
+            object-fit: contain;
+        }
+
+        header h1 {
+            text-align: center;
+            flex: 1 1 100%;
+            font-size: 22px;
+            margin: 10px 0;
+            color: white;
+        }
+
+        nav {
+            background-color: #3A913F;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 10px 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #F9A825;
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 30px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section:nth-child(even) {
+            background-color: #E6F2E6;
+        }
+
+        h2 {
+            color: #004080;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #3A913F;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: 40px;
+            border-top: 2px solid #ccc;
+        }
+
+        form {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #3A913F;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #F9A825;
+            color: #000;
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header img {
+                height: 70px;
+                margin: 5px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 8px 0;
+            }
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            z-index: 1000;
+            background-color: #25d366;
+            border-radius: 50%;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .whatsapp img {
+            width: 30px;
+            height: 30px;
+            filter: invert(1);
+        }
+
+        .whatsapp:hover {
+            background-color: #1ebd5b;
+        }
+
+        .inicio-fotos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .inicio-fotos img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .foto-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+            align-items: center;
+        }
+
+        .foto-section img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .foto-section .texto {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 20px;
+        }
+
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .valor-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #3A913F;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .valor-item h4 {
+            color: #3A913F;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .galeria-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .contacto-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contacto-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .contacto-card h4 {
+            color: #3A913F;
+            margin-bottom: 10px;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 18px;
+            color: #555;
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            border-left: 4px solid #3A913F;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="Imagenes\Bienestar familiar.png" alt="Logo Izquierda" />
+        <h1>
+            ASOCIACIÓN HOGARES COMUNITARIOS <br> AMOR Y PAZ DE BIENESTAR
+        </h1>
+        <img src="Imagenes\WhatsApp Image 2025-07-09 at 8.58.53 PM.jpeg" alt="Logo Derecha" />
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#quienes">¿Quiénes somos?</a></li>
+            <li><a href="#quehacemos">¿Qué hacemos?</a></li>
+            <li><a href="#valores">Valores</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio">
+        <h2>Bienvenidos a Nuestro Hogar</h2>
+        <div class="inicio-fotos">
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 4.15.52 PM.jpeg"alt="Niños en actividad 2">
+            <img src="Imagenes\WhatsApp Image 2025-07-10 at 4.15.51 PM.jpeg" alt="Niños en actividad 2">
+        </div>
+        <div class="quote">
+            "El amor es el abrazo que consuela, la sonrisa que anima, la palabra que enseña y el cuidado que acompaña
+            cada paso de nuestros pequeños. En nuestra guardería, el amor es el primer lenguaje que se aprende y el que
+            siempre se comparte."
+        </div>
+        <p>
+            En la Asociación Hogares Comunitarios Amor y Paz de Bienestar, creemos que cada niño merece un ambiente
+            lleno de amor, cuidado y oportunidades para crecer. Nuestro compromiso es brindar un espacio seguro donde
+            los pequeños pueden desarrollar sus habilidades, explorar su creatividad y construir las bases para un
+            futuro brillante.
+        </p>
+    </section>
+
+    <section id="quienes">
+        <h2>¿Quiénes Somos?</h2>
+        <div class="foto-section">
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 4.15.53 PM (2).jpeg" alt="Equipo de trabajo">
+            <div class="texto">
+                <h3>Nuestra Historia</h3>
+                <p>
+                    Soy la maestra Dorys y hago parte de una asociación dedicada al cuidado y bienestar de los niños de nuestra comunidad. Fundada con
+                    el propósito de brindar un ambiente seguro y enriquecedor, hemos estado al servicio de las familias
+                    durante años, construyendo un legado de amor, paz y desarrollo integral.
+                </p>
+                <p>
+                    Nuestro equipo está conformado por profesionales comprometidos con la educación inicial y el
+                    bienestar infantil, quienes día a día trabajan con dedicación para ofrecer la mejor atención a cada
+                    uno de nuestros pequeños.
+                </p>
+            </div>
+        </div>
+        <div class="foto-section">
+            <div class="texto">
+                <h3>Nuestra Misión</h3>
+                <p>
+                    Proporcionar cuidado integral, educación de calidad y un ambiente de amor y paz que permita el
+                    desarrollo pleno de cada niño, fortaleciendo los lazos familiares y comunitarios.
+                </p>
+                <h3>Nuestra Visión</h3>
+                <p>
+                    Ser reconocidos como la mejor opción en cuidado infantil comunitario, formando niños felices,
+                    seguros y preparados para enfrentar los desafíos del futuro.
+                </p>
+            </div>
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 4.15.52 PM (4).jpeg" alt="Niños jugando">
+        </div>
+    </section>
+
+    <section id="quehacemos">
+        <h2>¿Qué Hacemos?</h2>
+        <div class="foto-section">
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 4.13.08 PM.jpeg" alt="Actividades educativas">
+            <div class="texto">
+                <h3>Educación Inicial</h3>
+                <p>
+                    Desarrollamos programas educativos adaptados a cada edad, promoviendo el aprendizaje a través del
+                    juego, la exploración y la creatividad. Nuestros métodos pedagógicos están diseñados para estimular
+                    el desarrollo cognitivo, social y emocional de los niños.
+                </p>
+            </div>
+        </div>
+        <div class="foto-section">
+            <div class="texto">
+                <h3>Cuidado Integral</h3>
+                <p>
+                    Ofrecemos atención completa que incluye alimentación nutritiva, cuidado de la salud, actividades
+                    recreativas y apoyo emocional. Cada niño recibe la atención personalizada que necesita para crecer
+                    sano y feliz.
+                </p>
+            </div>
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 4.12.42 PM.jpeg" alt="Cuidado de niños">
+        </div>
+        <div class="foto-section">
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 3.58.43 PM.jpeg"
+                alt="Actividades grupales">
+            <div class="texto">
+                <h3>Actividades Especiales</h3>
+                <p>
+                    Organizamos eventos, celebraciones y actividades que fortalecen los lazos familiares y comunitarios.
+                    Creemos en la importancia de involucrar a las familias en el proceso de crecimiento y desarrollo de
+                    sus hijos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="valores">
+        <h2>Nuestros Valores</h2>
+        <div class="valores-grid">
+            <div class="valor-item">
+                <h4>💖 Amor</h4>
+                <p>El amor es la base de todo lo que hacemos. Cada acción, cada palabra y cada cuidado está impregnado
+                    de amor genuino hacia nuestros niños.</p>
+            </div>
+            <div class="valor-item">
+                <h4>🕊️ Paz</h4>
+                <p>Creamos un ambiente de tranquilidad y armonía donde los niños se sienten seguros y protegidos para
+                    explorar y aprender.</p>
+            </div>
+            <div class="valor-item">
+                <h4>🤝 Respeto</h4>
+                <p>Valoramos la individualidad de cada niño, respetando sus ritmos, necesidades y características
+                    únicas.</p>
+            </div>
+            <div class="valor-item">
+                <h4>🌟 Excelencia</h4>
+                <p>Nos esforzamos por brindar la mejor calidad en todos nuestros servicios, mejorando continuamente
+                    nuestros métodos y atención.</p>
+            </div>
+            <div class="valor-item">
+                <h4>🤗 Compromiso</h4>
+                <p>Estamos comprometidos con el bienestar y desarrollo integral de cada niño, trabajando en equipo con
+                    las familias.</p>
+            </div>
+            <div class="valor-item">
+                <h4>🌈 Alegría</h4>
+                <p>Promovemos un ambiente lleno de alegría, risas y momentos especiales que marcan positivamente la
+                    infancia.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <h2>Galería de Momentos Especiales</h2>
+        <p>Aquí compartimos algunos de los momentos más hermosos que vivimos día a día con nuestros pequeños:</p>
+        <div class="galeria-grid">
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 3.58.41 PM (3).jpeg" alt="Niños pintando">
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 4.15.52 PM (1).jpeg" alt="Hora del cuento">
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 4.12.51 PM.jpeg" alt="Juegos grupales">
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 3.58.41 PM (1).jpeg" alt="Actividades al aire libre">
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 3.58.42 PM (5).jpeg" alt="Momento de alimentación">
+            <img src="Imagenes/WhatsApp Image 2025-07-10 at 3.58.41 PM.jpeg" alt="Celebración especial">
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Interesado en conocer más sobre nuestros servicios? ¡Contáctanos!</p>
+
+        <div class="contacto-info">
+            <div class="contacto-card">
+                <h4>📍 Ubicación</h4>
+                <p>Cartagena, Bolívar<br>Colombia</p>
+            </div>
+            <div class="contacto-card">
+                <h4>📞 Teléfono</h4>
+                <p>310 6675279</p>
+            </div>
+            <div class="contacto-card">
+                <h4>✉️ Email</h4>
+                <p>ypaza913@gmail.com</p>
+            </div>
+            <div class="contacto-card">
+                <h4>🕒 Horarios</h4>
+                <p>Lunes a Viernes<br>6:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+
+        <form>
+            <h3>Envíanos un mensaje</h3>
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="tel" placeholder="Teléfono">
+            <select required>
+                <option value="">Selecciona un tema</option>
+                <option value="informacion">Información general</option>
+                <option value="inscripcion">Inscripción</option>
+                <option value="horarios">Horarios y costos</option>
+                <option value="otros">Otros</option>
+            </select>
+            <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+            <button type="submit">Enviar mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Asociación Hogares Comunitarios Amor y Paz de Bienestar. Todos los derechos reservados.</p>
+        <p>Construyendo futuros con amor y dedicación 💖</p>
+    </footer>
+
+    <a href="https://wa.me/573123456789" class="whatsapp" target="_blank">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj4KICA8cGF0aCBkPSJNMTcuNDcyIDYuNTI4QzE2LjQyNCA1LjQ4IDE1LjEzMyA0LjggMTMuNzM2IDQuNDU2IDEyLjMzOSA0LjExMiAxMC44NzMgNC4xMTkgOS40NzggNC40NzggOC4wODIgNC44MzcgNi44IDUuNTMxIDUuNzY4IDYuNTI4IDQuNjkgNy41NzIgMy45NzYgOC45MDkgMy43MDUgMTAuMzMzIDMuNDM0IDExLjc1NyAzLjYxNiAxMy4yMiA0LjIzMyAxNC41MzNMMy41IDIwLjVsNi4xMTUtLjcxNUMxMC44NzYgMjAuNDA3IDEyLjQyNCAyMC41ODggMTMuOTI5IDIwLjI2NiAxNS40MzMgMTkuOTQ0IDE2LjgzMiAxOS4yMzMgMTcuOTgxIDE4LjIxMiAxOS4xMjkgMTcuMTkxIDE5Ljk4OCAxNS44OTkgMjAuNDY5IDE0LjQ2NiAyMC45NSAxMy4wMzMgMjAuOTQgMTEuNTEyIDIwLjQ4MiAxMC4wNzMgMjAuMDI0IDguNjM0IDE5LjE0MiA3LjM1NyAxNy44NzIgNi4zNzNWNi4zNzNaTTEyIDEuNUMxOC4wNzUgMS41IDIzIDYuNDI1IDIzIDEyLjVTMTguMDc1IDIzLjUgMTIgMjMuNUMxMC4xIDIzLjUgOC4zIDIzIDYuNzUgMjIuMDVMMS41IDIzLjVMMy4wNSAxOC4zNUMyLjA1IDE2LjggMS41IDE1IDEuNSAxMy4wNUMxLjUgNi40NzUgNi40MjUgMS41IDEyIDEuNVoiLz4KPC9zdmc+"
+            alt="WhatsApp">
+    </a>
+
+</body>
+
+</html>
