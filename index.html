@@ -15,8 +15,6 @@
 
   <title>Asociacion Amor y paz</title>
 
-
-
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <!-- progress barstle -->
@@ -30,12 +28,488 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
+  <style>
+    /* ============================================
+       ESTILOS RESPONSIVE ADICIONALES
+       ============================================ */
+    
+    /* Header responsive */
+    @media (max-width: 991px) {
+      .header_section .navbar-brand img {
+        width: 60px !important;
+      }
+      
+      .header_section .navbar-brand .color p {
+        font-size: 12px !important;
+        line-height: 1.2;
+      }
+      
+      .navbar-toggler {
+        border: 2px solid #fff;
+        padding: 8px 10px;
+      }
+      
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+    }
 
+    @media (max-width: 576px) {
+      .header_section .navbar-brand img {
+        width: 50px !important;
+      }
+      
+      .header_section .navbar-brand .color p {
+        font-size: 10px !important;
+      }
+    }
 
+    /* Hero section responsive */
+    @media (max-width: 991px) {
+      .hero_section {
+        padding: 40px 0 !important;
+      }
+      
+      .hero_detail-box h3 {
+        font-size: 28px !important;
+        line-height: 1.3;
+      }
+      
+      .hero_detail-box p {
+        font-size: 14px !important;
+        margin-top: 15px;
+      }
+      
+      .hero_img-container {
+        margin-top: 30px;
+      }
+      
+      .call_to-btn {
+        padding: 10px 20px !important;
+        font-size: 14px !important;
+      }
+    }
 
-  <link rel="stylesheet" href="css/css-circular-prog-bar.css">
+    @media (max-width: 576px) {
+      .hero_detail-box h3 {
+        font-size: 22px !important;
+      }
+      
+      .hero_detail-box p {
+        font-size: 13px !important;
+      }
+    }
 
+    /* About section responsive */
+    @media (max-width: 768px) {
+      .about_section {
+        padding: 40px 15px !important;
+      }
+      
+      .main-heading {
+        font-size: 28px !important;
+        margin-bottom: 20px !important;
+      }
+      
+      .about_section p {
+        font-size: 14px !important;
+        text-align: justify;
+      }
+      
+      .about_img-box {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .about_img-box img {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
 
+    @media (max-width: 576px) {
+      .main-heading {
+        font-size: 24px !important;
+      }
+      
+      .about_section p {
+        font-size: 13px !important;
+      }
+    }
+
+    /* Teacher section responsive */
+    @media (max-width: 991px) {
+      .teacher_section {
+        padding: 40px 15px !important;
+      }
+      
+      .card-deck {
+        display: block !important;
+      }
+      
+      .card-deck .card {
+        margin-bottom: 20px !important;
+        width: 100% !important;
+      }
+      
+      .card-title {
+        font-size: 16px !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .teacher_container {
+        padding: 20px 0 !important;
+      }
+      
+      .card {
+        border-radius: 10px !important;
+      }
+      
+      .card-img-top {
+        border-radius: 10px 10px 0 0 !important;
+      }
+    }
+
+    /* Vehicle/Carousel section responsive */
+    @media (max-width: 768px) {
+      .vehicle_section {
+        padding: 40px 15px !important;
+      }
+      
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 40px !important;
+      }
+      
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+
+    /* Client section responsive */
+    @media (max-width: 768px) {
+      .client_section {
+        padding: 40px 15px !important;
+      }
+      
+      .client_detail {
+        flex-direction: column !important;
+        text-align: center !important;
+      }
+      
+      .client_img-box {
+        margin-bottom: 15px !important;
+      }
+      
+      .client_img-box img {
+        width: 80px !important;
+        height: 80px !important;
+      }
+      
+      .client_detail-box h4 {
+        font-size: 18px !important;
+      }
+      
+      .client_text p {
+        font-size: 14px !important;
+        text-align: justify;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .client_img-box img {
+        width: 60px !important;
+        height: 60px !important;
+      }
+      
+      .client_detail-box h4 {
+        font-size: 16px !important;
+      }
+      
+      .client_text p {
+        font-size: 13px !important;
+      }
+    }
+
+    /* Contact section responsive */
+    @media (max-width: 768px) {
+      .contact_section {
+        padding: 40px 15px !important;
+      }
+      
+      .contact-form input {
+        padding: 12px !important;
+        font-size: 14px !important;
+        margin-bottom: 15px;
+      }
+      
+      .input_message {
+        min-height: 100px !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .contact-form input {
+        padding: 10px !important;
+        font-size: 13px !important;
+      }
+    }
+
+    /* Admission section responsive */
+    @media (max-width: 991px) {
+      .admission_section {
+        padding: 40px 0 !important;
+      }
+      
+      .admission_container {
+        position: relative !important;
+        flex-direction: column !important;
+        padding: 20px !important;
+      }
+      
+      .admission_img-box {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+      }
+      
+      .admission_img-box img {
+        width: 100% !important;
+        height: auto !important;
+      }
+      
+      .admission_detail {
+        width: 100% !important;
+        padding: 20px !important;
+      }
+      
+      .admission_detail h3,
+      .admission_detail h4 {
+        font-size: 20px !important;
+      }
+      
+      .admission_detail p {
+        font-size: 14px !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .admission_detail h3,
+      .admission_detail h4 {
+        font-size: 18px !important;
+      }
+      
+      .admission_detail p {
+        font-size: 13px !important;
+      }
+    }
+
+    /* Landing section responsive */
+    @media (max-width: 768px) {
+      .landing_section {
+        padding: 40px 15px !important;
+      }
+      
+      .landing_detail {
+        font-size: 14px !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .landing_detail {
+        font-size: 13px !important;
+      }
+    }
+
+    /* Footer responsive */
+    @media (max-width: 768px) {
+      .footer_section {
+        padding: 20px 15px !important;
+      }
+      
+      .footer_section p {
+        font-size: 12px !important;
+        text-align: center;
+      }
+    }
+
+    /* Google Maps responsive */
+    @media (max-width: 768px) {
+      iframe {
+        height: 300px !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      iframe {
+        height: 250px !important;
+      }
+    }
+
+    /* General spacing adjustments */
+    @media (max-width: 768px) {
+      .layout_padding {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+      }
+      
+      .layout_padding-bottom {
+        padding-bottom: 40px !important;
+      }
+      
+      .layout_padding2 {
+        padding: 20px 0 !important;
+      }
+      
+      .mt-5 {
+        margin-top: 2rem !important;
+      }
+      
+      .mt-4 {
+        margin-top: 1.5rem !important;
+      }
+      
+      .mt-3 {
+        margin-top: 1rem !important;
+      }
+    }
+
+    /* Container adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+    }
+
+    /* Button adjustments */
+    @media (max-width: 576px) {
+      .call_to-btn {
+        font-size: 13px !important;
+        padding: 8px 15px !important;
+      }
+      
+      .call_to-btn img {
+        width: 15px !important;
+        height: 15px !important;
+      }
+    }
+
+    /* Text alignment for mobile */
+    @media (max-width: 768px) {
+      .text-center {
+        text-align: center !important;
+      }
+      
+      p {
+        text-align: justify !important;
+      }
+      
+      .main-heading {
+        text-align: center !important;
+      }
+    }
+
+    /* Navbar collapse responsive */
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+      
+      .navbar-nav .nav-item {
+        padding: 10px 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .navbar-nav .nav-item:last-child {
+        border-bottom: none;
+      }
+      
+      .navbar-nav .nav-link {
+        font-size: 16px !important;
+      }
+    }
+
+    /* Card improvements for mobile */
+    @media (max-width: 768px) {
+      .card-body {
+        padding: 15px !important;
+      }
+      
+      .card-title {
+        text-align: center !important;
+        margin-bottom: 10px !important;
+      }
+    }
+
+    /* Image responsive improvements */
+    @media (max-width: 768px) {
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+    }
+
+    /* Row adjustments */
+    @media (max-width: 768px) {
+      .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      
+      .col-md-6 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+    }
+
+    /* Hero container adjustments */
+    @media (max-width: 991px) {
+      .hero-container {
+        flex-direction: column !important;
+      }
+      
+      .hero_detail-box,
+      .hero_img-container {
+        width: 100% !important;
+      }
+    }
+
+    /* Admission position adjustments */
+    @media (max-width: 991px) {
+      #map {
+        min-height: 300px !important;
+      }
+      
+      .admission_container {
+        position: relative !important;
+        margin-top: 20px;
+      }
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Touch improvements */
+    @media (max-width: 768px) {
+      a, button, .card {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+      }
+      
+      .card:active,
+      .call_to-btn:active {
+        transform: scale(0.98);
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -46,15 +520,9 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <img src="images/Asociacioneslogo.jpeg" alt="Logo Asociación Amor y Paz" style="width:80px; height:auto;">
-
             <div class="color">
-              <p> ASOCIACION AMOR Y PAZ DE BIENESTAR
-              </p>
-
-
-
+              <p> ASOCIACION AMOR Y PAZ DE BIENESTAR</p>
             </div>
-
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,30 +538,25 @@
                 <li class="nav-item ">
                   <a class="nav-link" href="/Quienes Somos.html"> QUIENES SOMOS </a>
                 </li>
-
                 <li class="nav-item ">
                   <a class="nav-link" href="/Galeria.html"> GALERIA </a>
                 </li>
-
                 <li class="nav-item">
                   <a class="nav-link" href="/NUESTRO PROGRAMA.html"> NUESTRO PROGRAMA </a>
                 </li>
-
-
                 <li class="nav-item">
-                  <a class="nav-link" href="/Talento.html"> TALENTO HUMANO  </a>
+                  <a class="nav-link" href="/Talento.html"> TALENTO HUMANO </a>
                 </li>
-
-
-                
               </ul>
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
               </form>
             </div>
+          </div>
         </nav>
       </div>
     </header>
+
     <section class="hero_section ">
       <div class="hero-container container">
         <div class="hero_detail-box">
@@ -101,15 +564,12 @@
             FORMANDO <br>
             Con amor y Valores
           </h3>
-          <h1>
-
-          </h1>
+          <h1></h1>
           <p>
             En la Asociación de Hogares Comunitarios de Bienestar Amor y Paz,
             creemos firmemente que cada niño merece
             crecer en un entorno lleno de amor,
-            cuidado y oportunidades que n
-            utran su desarrollo integral.
+            cuidado y oportunidades que nutran su desarrollo integral.
             Somos un Hogar comprometido con
             el cuidado, la educación inicial
             y el desarrollo integral de la primera
@@ -119,9 +579,7 @@
           </p>
           <div class="hero_btn-continer">
             <a href="/Talento.html" class="call_to-btn btn_white-border">
-              <span>
-                Contactanos
-              </span>
+              <span>Contactanos</span>
               <img src="images/right-arrow.png" alt="">
             </a>
           </div>
@@ -141,7 +599,6 @@
     <div class="container">
       <h2 class="main-heading ">
         Nuestro Talento Humano
-
       </h2>
       <p>
         En el Hogar Asociación Amor y Paz contamos con un equipo humano
@@ -151,21 +608,16 @@
       </p>
 
       <div class="about_img-box ">
-        <img src="images/01.jpg" alt="" class="img-fluid w-10">
+        <img src="images/01.jpg" alt="" class="img-fluid w-100">
       </div>
       <div class="d-flex justify-content-center mt-5">
         <a href="/Talento.html" class="call_to-btn  ">
-
-          
           <img src="images/right-arrow.png" alt="">
-        <span>Ir a Talento Humano</span>
+          <span>Ir a Talento Humano</span>
         </a>
-
       </div>
     </div>
   </section>
-
-
   <!-- about section -->
 
   <!-- teacher section -->
@@ -190,35 +642,23 @@
             <div class="card-body">
               <h5 class="card-title">Reunión Pedagógica</h5>
             </div>
-
           </div>
           <div class="card">
             <img class="card-img-top" src="images/06.jpeg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Jornada de Capacitación</h5>
-
             </div>
-
           </div>
-
           <div class="card">
             <img class="card-img-top" src="images/08.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Gestión Institucional</h5>
-
             </div>
-
           </div>
         </div>
       </div>
-
-
-      <div class="d-flex justify-content-center mt-3">
-        
-      </div>
     </div>
   </section>
-
   <!-- teacher section -->
 
   <!-- vehicle section -->
@@ -261,22 +701,17 @@
           </a>
         </div>
       </div>
-
     </div>
   </section>
-
-
   <!-- vehicle section -->
+
   <!-- client section -->
   <section class="client_section layout_padding">
     <div class="container">
       <h2 class="main-heading ">
-        <h2>Testimonios de Padres de Familia</h2>
-
+        Testimonios de Padres de Familia
       </h2>
-      <p class="text-center">
-
-      </p>
+      <p class="text-center"></p>
       <div class="layout_padding2">
         <div class="client_container d-flex flex-column">
           <div class="client_detail d-flex align-items-center">
@@ -284,16 +719,11 @@
               <img src="images/madre fami.jpg" alt="">
             </div>
             <div class="client_detail-box">
-              <h4>
-                Karina Guerrero
-              </h4>
-              <span>
-
-              </span>
+              <h4>Karina Guerrero</h4>
+              <span></span>
             </div>
           </div>
           <div class="client_text mt-4">
-            <p>
             <p>
               "Mi hijo Mathias Blanquicett ha experimentado un crecimiento
               significativo en su desarrollo integral gracias al amor,
@@ -302,27 +732,18 @@
               porque sé que está en un lugar seguro, lleno de valores
               y acompañamiento constante."
             </p>
-            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-
-
-
   <!-- client section -->
 
   <!-- contact section -->
-
   <section class="contact_section layout_padding-bottom">
     <div class="container">
-
       <h2 class="main-heading">
-        <h2>Contáctanos</h2>
-
-
+        Contáctanos
       </h2>
       <p>
         Estamos disponibles para brindarte información y resolver tus inquietudes.
@@ -339,20 +760,15 @@
                     <input type="text" placeholder="Nombre">
                   </div>
                   <div>
-                    <input type="text" placeholder="310 6675279
-
-">
+                    <input type="text" placeholder="310 6675279">
                   </div>
                   <div>
-                    <input type="email" placeholder="ypaza913@gmail.com
-
-"> 
+                    <input type="email" placeholder="ypaza913@gmail.com">
                   </div>
                   <div>
                     <input type="text" placeholder="Mensaje" class="input_message">
                   </div>
                   <div class="d-flex justify-content-center">
-                    
                   </div>
                 </form>
               </div>
@@ -360,120 +776,59 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
-
-
   <!-- end contact section -->
 
   <!-- admission section -->
   <section class="admission_section ">
     <div class="container-fluid position-relative">
       <div class="row h-100">
-        <div id="map" class="h-100 w-100 ">
-        </div>
+        <div id="map" class="h-100 w-100 "></div>
         <div class="container">
           <div class="admission_container position-absolute">
             <div class="admission_img-box">
               <img src="images/009.jpg" alt="">
             </div>
             <div class="admission_detail">
-              <h3>
-
-              </h3>
+              <h3></h3>
               <h4>Educación con Amor y Valores</h4>
-<p>
-En el Hogar Asociación Amor y Paz acompañamos a nuestros niños
-en su crecimiento con actividades lúdicas, aprendizaje significativo
-y formación en valores.
-</p>
-
-
-
-                </a>
-              </div>
-
+              <p>
+                En el Hogar Asociación Amor y Paz acompañamos a nuestros niños
+                en su crecimiento con actividades lúdicas, aprendizaje significativo
+                y formación en valores.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-
-
-
-
-
   <!-- admission section -->
-
 
   <!-- landing section -->
   <section class="landing_section layout_padding">
     <div class="container">
-      <h2 class="main-heading">
-
-
-      </h2>
-      <h2 class="main-heading number_heading">
-       
-
-      </h2>
+      <h2 class="main-heading"></h2>
+      <h2 class="main-heading number_heading"></h2>
       <p class="landing_detail text-center">
-        <p>
-📍 Cra 81C – Cartagena, Bolívar <br>
-📞 3106675279 <br>
-📧 ypaza913@gmail.com
-</p>
-
-
+        📍 Cra 81C – Cartagena, Bolívar <br>
+        📞 3106675279 <br>
+        📧 ypaza913@gmail.com
       </p>
     </div>
   </section>
-
   <!-- end landing section -->
-
-
-
 
   <!-- footer section -->
   <section class="container-fluid footer_section">
     <p>
-  © 2026 Asociación Amor y Paz – Cartagena, Colombia. 
-  Todos los derechos reservados.
-</p>
-
+      © 2026 Asociación Amor y Paz – Cartagena, Colombia.
+      Todos los derechos reservados.
+    </p>
   </section>
   <!-- footer section -->
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-
-  <script>
-    // This example adds a marker to indicate the position of Bondi Beach in Sydney,
-    // Australia.
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 11,
-        center: {
-          lat: 40.645037,
-          lng: -73.880224
-        },
-      });
-
-      var image = 'images/maps-and-flags.png';
-      var beachMarker = new google.maps.Marker({
-        position: {
-          lat: 40.645037,
-          lng: -73.880224
-        },
-        map: map,
-        icon: image
-      });
-    }
-  </script>
-  <!-- google map js -->
   <!-- Google Maps -->
   <div style="margin-top:20px;">
     <iframe
@@ -482,9 +837,36 @@ y formación en valores.
     </iframe>
   </div>
 
-  <script src="<iframe src="">
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Auto-close navbar on mobile when clicking a link
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 992) {
+          navbarCollapse.classList.remove('show');
+        }
+      });
+    });
   </script>
-  <!-- end google map js -->
 </body>
 
 </html>

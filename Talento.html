@@ -37,9 +37,15 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 250px;
+            height: 150px;
             background: linear-gradient(135deg, #00b894, #28a745);
             z-index: -1;
+        }
+
+        @media (min-width: 768px) {
+            .bg-green-bottom {
+                height: 250px;
+            }
         }
 
         .glass-effect {
@@ -48,24 +54,54 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .team-avatar {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #00b894, #007bff);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: white;
-            margin: 0 auto 1rem;
-        }
-
         .mission-vision-card {
             background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 123, 255, 0.1));
             border: 2px solid transparent;
             background-clip: padding-box;
+        }
+
+        /* Menú móvil hamburguesa */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #007bff, #00b894);
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 40;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
         }
     </style>
 </head>
@@ -77,92 +113,112 @@
 
     <!-- Header -->
     <header class="fixed w-full top-0 z-50 bg-gradient-to-r from-primary-blue to-primary-green shadow-2xl">
-        <nav class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-            <div class="text-2xl font-bold text-white">
+        <nav class="max-w-6xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
+            <div class="text-lg sm:text-2xl font-bold text-white">
                 Asociación Amor y Paz
             </div>
-            <ul class="flex space-x-8 hidden md:flex">
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8">
                 <li><a href="/index.html"
                         class="text-white hover:text-yellow-300 transition-colors text-lg font-medium">Inicio</a></li>
                 <li><a href="#mision-vision"
                         class="text-white hover:text-yellow-300 transition-colors text-lg font-medium">Misión</a></li>
-                
                 <li><a href="#servicios"
                         class="text-white hover:text-yellow-300 transition-colors text-lg font-medium">Servicios</a>
                 </li>
             </ul>
+
+            <!-- Mobile Hamburger -->
+            <div class="hamburger md:hidden" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="flex flex-col space-y-4">
+                <li><a href="/index.html" onclick="toggleMenu()"
+                        class="block text-white hover:text-yellow-300 transition-colors text-lg font-medium py-2">Inicio</a></li>
+                <li><a href="#mision-vision" onclick="toggleMenu()"
+                        class="block text-white hover:text-yellow-300 transition-colors text-lg font-medium py-2">Misión</a></li>
+                <li><a href="#servicios" onclick="toggleMenu()"
+                        class="block text-white hover:text-yellow-300 transition-colors text-lg font-medium py-2">Servicios</a>
+                </li>
+            </ul>
+        </div>
     </header>
 
-    <main class="pt-24 pb-64 max-w-7xl mx-auto px-6">
+    <main class="pt-20 sm:pt-24 pb-32 sm:pb-64 max-w-7xl mx-auto px-4 sm:px-6">
 
         <!-- Hero Section -->
-        <section id="inicio" class="glass-effect rounded-3xl p-16 mb-16 shadow-2xl text-center">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
+        <section id="inicio" class="glass-effect rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-16 mb-8 sm:mb-16 shadow-2xl">
+            <div class="grid md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
+                <div class="text-center md:text-left">
                     <h1
-                        class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary-blue to-primary-green bg-clip-text text-transparent mb-8">
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-blue to-primary-green bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8">
                         Guardería Infantil
                     </h1>
-                    <p class="text-2xl text-gray-700 leading-relaxed mb-12">
+                    <p class="text-xl sm:text-2xl text-gray-700 leading-relaxed mb-6 sm:mb-8 md:mb-12">
                         <span class="font-bold text-primary-green">Amor y Paz</span>
                     </p>
-                    <div class="grid md:grid-cols-3 gap-6 text-center">
-                        <div class="p-8 bg-primary-blue/10 rounded-2xl border-2 border-primary-blue/30">
-                            <div class="text-4xl font-bold text-primary-blue mb-3">10+</div>
-                            <p class="text-gray-600 font-semibold text-lg">Años de experiencia</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                        <div class="p-4 sm:p-6 md:p-8 bg-primary-blue/10 rounded-xl sm:rounded-2xl border-2 border-primary-blue/30">
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-blue mb-2 sm:mb-3">10+</div>
+                            <p class="text-sm sm:text-base md:text-lg text-gray-600 font-semibold">Años de experiencia</p>
                         </div>
-                        <div class="p-8 bg-primary-green/10 rounded-2xl border-2 border-primary-green/30">
-
-                            <p class="text-gray-600 font-semibold text-lg">Niños felices</p>
+                        <div class="p-4 sm:p-6 md:p-8 bg-primary-green/10 rounded-xl sm:rounded-2xl border-2 border-primary-green/30">
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-green mb-2 sm:mb-3">200+</div>
+                            <p class="text-sm sm:text-base md:text-lg text-gray-600 font-semibold">Niños felices</p>
                         </div>
-                        <div class="p-8 bg-orange-500/10 rounded-2xl border-2 border-orange-500/30">
-                            <div class="text-4xl font-bold text-orange-500 mb-3">ICBF</div>
-
+                        <div class="p-4 sm:p-6 md:p-8 bg-orange-500/10 rounded-xl sm:rounded-2xl border-2 border-orange-500/30">
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500 mb-2 sm:mb-3">ICBF</div>
+                            <p class="text-sm sm:text-base md:text-lg text-gray-600 font-semibold">Certificado</p>
                         </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
                     <div
-                        class="bg-gradient-to-br from-yellow-400/20 to-orange-400/20 p-12 rounded-3xl border-4 border-yellow-100 shadow-xl hover:scale-105 transition-all duration-500">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                        class="bg-gradient-to-br from-yellow-400/20 to-orange-400/20 p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-yellow-100 shadow-xl hover:scale-105 transition-all duration-500">
+                        <div class="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 md:mb-6">❤️</div>
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4">
                             Desarrollo y Bienestar
                         </h3>
-
-                        <p class="text-lg text-gray-700 font-semibold">
+                        <p class="text-sm sm:text-base md:text-lg text-gray-700 font-semibold">
                             Apoyamos el crecimiento integral de la niñez en Cartagena.
                         </p>
-
                     </div>
                     <div
-                        class="bg-gradient-to-br from-pink-400/20 to-purple-400/20 p-12 rounded-3xl border-4 border-pink-100 shadow-xl hover:scale-105 transition-all duration-500">
-                        <div class="text-6xl mb-6">🎓</div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Desarrollo Temprano</h3>
-                        <p class="text-lg text-gray-700 font-semibold">Estimulación certificada</p>
+                        class="bg-gradient-to-br from-pink-400/20 to-purple-400/20 p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-pink-100 shadow-xl hover:scale-105 transition-all duration-500">
+                        <div class="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 md:mb-6">🎓</div>
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4">Desarrollo Temprano</h3>
+                        <p class="text-sm sm:text-base md:text-lg text-gray-700 font-semibold">Estimulación certificada</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Misión y Visión - CONTENIDO OFICIAL -->
-        <section id="mision-vision" class="glass-effect rounded-3xl p-20 mb-20 shadow-2xl">
-            <div class="text-center mb-20">
+        <!-- Misión y Visión -->
+        <section id="mision-vision" class="glass-effect rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-20 mb-8 sm:mb-16 md:mb-20 shadow-2xl">
+            <div class="text-center mb-8 sm:mb-12 md:mb-20">
                 <h2
-                    class="text-5xl font-bold bg-gradient-to-r from-primary-green to-primary-blue bg-clip-text text-transparent mb-6">
+                    class="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-green to-primary-blue bg-clip-text text-transparent mb-4 sm:mb-6">
                     Nuestra Identidad
                 </h2>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-16 items-stretch">
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-stretch">
                 <!-- Misión -->
                 <div
-                    class="mission-vision-card p-12 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500 group">
+                    class="mission-vision-card p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500 group">
                     <div
-                        class="w-20 h-20 bg-gradient-to-r from-primary-green to-success-green rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-300">
-                        <span class="text-3xl font-bold text-white">M</span>
+                        class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-r from-primary-green to-success-green rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 md:mb-8 group-hover:scale-110 transition-all duration-300">
+                        <span class="text-2xl sm:text-2xl md:text-3xl font-bold text-white">M</span>
                     </div>
-                    <h3 class="text-3xl font-bold text-primary-green mb-8 text-center">Nuestra Misión</h3>
-                    <p class="text-xl text-gray-700 leading-relaxed text-justify">
+                    <h3 class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary-green mb-4 sm:mb-6 md:mb-8 text-center">Nuestra Misión</h3>
+                    <p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed text-justify">
                         Proporcionar cuidado integral, educación de calidad y un ambiente de amor y paz que permita
                         <strong>el desarrollo pleno de cada niño</strong>, fortaleciendo los lazos familiares y
                         comunitarios.
@@ -171,13 +227,13 @@
 
                 <!-- Visión -->
                 <div
-                    class="mission-vision-card p-12 rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500 group">
+                    class="mission-vision-card p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500 group">
                     <div
-                        class="w-20 h-20 bg-gradient-to-r from-primary-blue to-primary-green rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-300">
-                        <span class="text-3xl font-bold text-white">V</span>
+                        class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-r from-primary-blue to-primary-green rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 md:mb-8 group-hover:scale-110 transition-all duration-300">
+                        <span class="text-2xl sm:text-2xl md:text-3xl font-bold text-white">V</span>
                     </div>
-                    <h3 class="text-3xl font-bold text-primary-blue mb-8 text-center">Nuestra Visión</h3>
-                    <p class="text-xl text-gray-700 leading-relaxed text-justify">
+                    <h3 class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary-blue mb-4 sm:mb-6 md:mb-8 text-center">Nuestra Visión</h3>
+                    <p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed text-justify">
                         Ser reconocidos como <strong>la mejor opción en cuidado infantil comunitario</strong>,
                         formando niños felices, seguros y preparados para enfrentar los desafíos del futuro.
                     </p>
@@ -185,28 +241,24 @@
             </div>
         </section>
 
-        <!-- Equipo Profesional -->
-        
-
-
-        <!-- Servicios - CONTENIDO OFICIAL -->
-        <section id="servicios" class="glass-effect rounded-3xl p-20 shadow-2xl">
-            <div class="text-center mb-20">
+        <!-- Servicios -->
+        <section id="servicios" class="glass-effect rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-20 shadow-2xl">
+            <div class="text-center mb-8 sm:mb-12 md:mb-20">
                 <h2
-                    class="text-5xl font-bold bg-gradient-to-r from-primary-blue to-primary-green bg-clip-text text-transparent mb-8">
+                    class="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-blue to-primary-green bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8">
                     Nuestros Servicios
                 </h2>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-16">
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-10 md:gap-16">
                 <!-- Educación Inicial -->
                 <div
-                    class="group hover:scale-105 transition-all duration-500 p-12 rounded-3xl bg-gradient-to-br from-primary-blue/10 to-primary-green/10 border-4 border-primary-blue/20 hover:border-primary-blue shadow-xl">
+                    class="group hover:scale-105 transition-all duration-500 p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-primary-blue/10 to-primary-green/10 border-2 sm:border-4 border-primary-blue/20 hover:border-primary-blue shadow-xl">
                     <div
-                        class="w-24 h-24 bg-primary-blue rounded-3xl flex items-center justify-center mx-auto mb-8 text-4xl font-bold text-white group-hover:scale-110 transition-all duration-300">
+                        class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-primary-blue rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 md:mb-8 text-2xl sm:text-3xl md:text-4xl font-bold text-white group-hover:scale-110 transition-all duration-300">
                         E1</div>
-                    <h3 class="text-3xl font-bold text-primary-blue mb-6 text-center">Educación Inicial</h3>
-                    <p class="text-xl text-gray-700 leading-relaxed mb-8 text-justify">
+                    <h3 class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary-blue mb-3 sm:mb-4 md:mb-6 text-center">Educación Inicial</h3>
+                    <p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-6 md:mb-8 text-justify">
                         Desarrollamos <strong>programas educativos adaptados a cada edad</strong>, promoviendo el
                         aprendizaje a través
                         del juego, la exploración y la creatividad. Nuestros métodos pedagógicos están diseñados para
@@ -217,12 +269,12 @@
 
                 <!-- Cuidado Integral -->
                 <div
-                    class="group hover:scale-105 transition-all duration-500 p-12 rounded-3xl bg-gradient-to-br from-primary-green/10 to-success-green/10 border-4 border-primary-green/20 hover:border-primary-green shadow-xl">
+                    class="group hover:scale-105 transition-all duration-500 p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-primary-green/10 to-success-green/10 border-2 sm:border-4 border-primary-green/20 hover:border-primary-green shadow-xl">
                     <div
-                        class="w-24 h-24 bg-primary-green rounded-3xl flex items-center justify-center mx-auto mb-8 text-4xl font-bold text-white group-hover:scale-110 transition-all duration-300">
+                        class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-primary-green rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 md:mb-8 text-2xl sm:text-3xl md:text-4xl font-bold text-white group-hover:scale-110 transition-all duration-300">
                         CI</div>
-                    <h3 class="text-3xl font-bold text-primary-green mb-6 text-center">Cuidado Integral</h3>
-                    <p class="text-xl text-gray-700 leading-relaxed mb-8 text-justify">
+                    <h3 class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary-green mb-3 sm:mb-4 md:mb-6 text-center">Cuidado Integral</h3>
+                    <p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-6 md:mb-8 text-justify">
                         Ofrecemos <strong>atención completa</strong> que incluye alimentación nutritiva, cuidado de la
                         salud,
                         actividades recreativas y apoyo emocional. <strong>Cada niño recibe la atención
@@ -235,60 +287,74 @@
     </main>
 
     <!-- Footer -->
-    <footer class="glass-effect rounded-3xl p-16 mt-20 mx-6 mb-32 shadow-2xl">
-        <div class="grid md:grid-cols-3 gap-16 text-center md:text-left">
+    <footer class="glass-effect rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-16 mt-8 sm:mt-16 md:mt-20 mx-4 sm:mx-6 mb-16 sm:mb-24 md:mb-32 shadow-2xl">
+        <div class="grid md:grid-cols-3 gap-8 sm:gap-12 md:gap-16 text-center md:text-left">
             <div>
-                <h3 class="text-4xl font-bold text-primary-blue mb-8">Asociación Amor y Paz</h3>
-                <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.10.53 PM (2).jpeg" alt="">
+                <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-blue mb-4 sm:mb-6 md:mb-8">Asociación Amor y Paz</h3>
+                <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.10.53 PM (2).jpeg" alt="Logo" class="w-full max-w-xs mx-auto md:mx-0 rounded-xl shadow-lg">
             </div>
 
-            <div class="logos-container flex flex-wrap justify-center md:justify-start gap-12 pt-8 md:pt-0">
+            <div class="logos-container flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4 sm:gap-6 md:gap-12 pt-4 sm:pt-6 md:pt-8">
                 <div
-                    class="px-10 py-6 bg-primary-blue/20 border-4 border-primary-blue rounded-3xl shadow-xl hover:scale-105 transition-all">
-                    <div class="text-3xl font-bold text-primary-blue mb-2">ICBF</div>
-                    <div class="text-xl text-primary-blue/80 font-semibold"></div>
+                    class="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 bg-primary-blue/20 border-2 sm:border-3 md:border-4 border-primary-blue rounded-2xl sm:rounded-3xl shadow-xl hover:scale-105 transition-all">
+                    <div class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary-blue mb-1 sm:mb-2">ICBF</div>
+                    <div class="text-base sm:text-lg md:text-xl text-primary-blue/80 font-semibold">Certificado</div>
+                <img src="imagenes Nuevas/Bien.png" alt="Guardería Certificada" 
+                         class="w-20 sm:w-24 md:w-32 mx-auto rounded-xl shadow-md">
                 </div>
-                <div
-                    <div class="px-10 py-6 bg-orange-500/20 border-4 border-orange-500 rounded-3xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center">
-    
-    <div class="text-3xl font-bold text-orange-500 mb-4">
-        Guardería Certificada
-    </div>
 
-    <img src="nestar.jpeg" alt="Guardería Certificada" 
-         class="w-32 mx-auto rounded-xl shadow-md">
-
-</div>
-
-                <div
-                    class="px-10 py-6 bg-orange-500/20 border-4 border-orange-500 rounded-3xl shadow-xl hover:scale-105 transition-all">
-                    <div class="text-3xl font-bold text-orange-500">Guardería Certificada</div>
-                    
+                
+                <div class="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 bg-orange-500/20 border-2 sm:border-3 md:border-4 border-orange-500 rounded-2xl sm:rounded-3xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center">
+                    <div class="text-xl sm:text-2xl md:text-3xl font-bold text-orange-500 mb-2 sm:mb-3 md:mb-4">
+                        Guardería Certificada
+                        
+                    </div>
+                    <img src="imagenes Nuevas/Bien.png" alt="Guardería Certificada" 
+                         class="w-20 sm:w-24 md:w-32 mx-auto rounded-xl shadow-md">
                 </div>
             </div>
 
             <div class="md:text-right">
-                <h4 class="text-3xl font-bold text-gray-800 mb-8">Contáctanos</h4>
-                <p class="text-2xl text-primary-blue font-bold mb-4">+ 57 310 6675279
-
-
-                <p class="text-xl text-gray-600 mb-6">ypaza913@gmail.com</p>
-                <p class="text-lg text-gray-500"></p>
+                <h4 class="text-2xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 md:mb-8">Contáctanos</h4>
+                <p class="text-xl sm:text-xl md:text-2xl text-primary-blue font-bold mb-2 sm:mb-3 md:mb-4">+ 57 310 6675279</p>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-3 sm:mb-4 md:mb-6">ypaza913@gmail.com</p>
             </div>
         </div>
-        <div class="border-t-4 border-primary-green/40 mt-16 pt-12 text-center">
-            <p class="text-2xl text-gray-600 font-semibold">&copy; 2026 Asociación Amor y Paz – Cartagena, Colombia. Todos los derechos reservados.</p>
+        <div class="border-t-2 sm:border-t-3 md:border-t-4 border-primary-green/40 mt-8 sm:mt-12 md:mt-16 pt-6 sm:pt-8 md:pt-12 text-center">
+            <p class="text-sm sm:text-base md:text-2xl text-gray-600 font-semibold">&copy; 2026 Asociación Amor y Paz – Cartagena, Colombia. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            
+            if (!nav.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
         });
     </script>
 </body>

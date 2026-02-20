@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <title>Adward</title>
+  <title>Galería de Imágenes - Asociación Amor y Paz</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -17,45 +17,92 @@
   <link href="css/responsive.css" rel="stylesheet" />
 
   <style>
-   .carousel-item img,
-.carousel-item video {
-  width: 100%;
-  height: 600px;
-  object-fit: cover; /* Llena sin deformar */
-  border-radius: 15px;
-}
-/* Lightbox fondo oscuro */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  padding-top: 50px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
-  text-align: center;
-}
+    /* ===== ESTILOS ORIGINALES ===== */
+    .carousel-item img,
+    .carousel-item video {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
 
-/* Imagen y video grande */
-.lightbox-content {
-  max-width: 90%;
-  max-height: 80vh;
-  margin-top: 40px;
-  border-radius: 15px;
-}
+    /* Lightbox fondo oscuro */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      text-align: center;
+    }
 
-/* Botón cerrar */
-.close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: white;
-  font-size: 40px;
-  cursor: pointer;
-}
+    /* Imagen y video grande */
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 80vh;
+      margin-top: 40px;
+      border-radius: 15px;
+    }
 
+    /* Botón cerrar */
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    /* ===== RESPONSIVE FIXES ===== */
+
+    /* Tablet */
+    @media (max-width: 991px) {
+      .carousel-item img,
+      .carousel-item video {
+        height: 420px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 767px) {
+      .carousel-item img,
+      .carousel-item video {
+        height: 260px;
+        border-radius: 10px;
+      }
+
+      .teacher_section h2 {
+        font-size: 1.5rem;
+      }
+
+      .teacher_section p {
+        font-size: 14px;
+      }
+
+      .close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+      }
+    }
+
+    /* Small phones */
+    @media (max-width: 480px) {
+      .carousel-item img,
+      .carousel-item video {
+        height: 210px;
+        border-radius: 8px;
+      }
+
+      .teacher_section h2 {
+        font-size: 1.3rem;
+      }
+    }
   </style>
 
 </head>
@@ -68,9 +115,8 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
-  <span style="color: #28a745;">Asociación Amor y Paz</span>
-</a>
-
+            <span style="color: #0ee60e;">Asociación Amor y Paz</span>
+          </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent">
@@ -80,25 +126,18 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav">
-
                 <li class="nav-item active">
                   <a class="nav-link" href="index.html">INICIO</a>
                 </li>
-
                 <li class="nav-item">
                   <a class="nav-link" href="/Quienes Somos.html">QUIENES SOMOS</a>
                 </li>
-
                 <li class="nav-item">
                   <a class="nav-link" href="/Talento.html">TALENTO HUMANO</a>
                 </li>
-
                 <li class="nav-item">
                   <a class="nav-link" href="/NUESTRO PROGRAMA.html">NUESTRO PROGRAMA</a>
                 </li>
-
-                
-
               </ul>
             </div>
           </div>
@@ -172,63 +211,47 @@
             </div>
           </div>
 
-
           <div class="carousel-item">
-            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.59 PM (1).jpeg   " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.59 PM (1).jpeg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.26 PM.jpeg   " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.26 PM.jpeg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.26 PM (2).jpeg  " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.26 PM (2).jpeg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.25 PM.jpeg   " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.25 PM.jpeg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.25 PM.jpeg  " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.25 PM (1).jpeg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.25 PM (1).jpeg   " class="d-block w-100" alt="">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Sonrisas que Inspiran</h5>
-            </div>
-          </div>
-
-            <div class="carousel-item">
             <img src="imagenes Nuevas/recuerdosssss.jpeg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
-
-          <div class="carousel-item">
-            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.10.53 PM (1).jpeg" class="d-block w-100" alt="">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Sonrisas que Inspiran</h5>
-            </div>
-          </div>
-
 
           <div class="carousel-item">
             <img src="imagenes Nuevas/recuerdossss.jpeg" class="d-block w-100" alt="">
@@ -238,7 +261,7 @@
           </div>
 
           <div class="carousel-item">
-            <img src="imagenes Nuevas/recuerdosss.jpeg  " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/recuerdosss.jpeg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
@@ -251,21 +274,19 @@
             </div>
           </div>
 
-
           <div class="carousel-item">
-            <img src="imagenes Nuevas/IMG-20250723-WA0006.jpg  " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/IMG-20250723-WA0006.jpg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="imagenes Nuevas/IMG-20250723-WA0005.jpg    " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/IMG-20250723-WA0005.jpg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
-
 
           <div class="carousel-item">
             <img src="imagenes Nuevas/9.jpg" class="d-block w-100" alt="">
@@ -289,29 +310,14 @@
           </div>
 
           <div class="carousel-item">
-            <img src="imagenes Nuevas/2.jpg" class="d-block w-100" alt="">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Sonrisas que Inspiran</h5>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.10.53 PM.jpeg   " class="d-block w-100" alt="">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Sonrisas que Inspiran</h5>
-            </div>
-          </div>
-
-          <div class="carousel-item">
             <img src="imagenes Nuevas/actividades especiales.jpg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
 
-
           <div class="carousel-item">
-            <img src="imagenes Nuevas/cuidado integraljpg.jpg      " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/cuidado integraljpg.jpg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
@@ -325,47 +331,25 @@
           </div>
 
           <div class="carousel-item">
-            <img src="imagenes Nuevas/uwu.jpg    " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/uwu.jpg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="imagenes Nuevas/uwa.jpg " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/uwa.jpg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="imagenes Nuevas/uwe.jpg  " class="d-block w-100" alt="">
+            <img src="imagenes Nuevas/uwe.jpg" class="d-block w-100" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h5>Sonrisas que Inspiran</h5>
             </div>
           </div>
-
-          <div class="carousel-item">
-            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.25 PM.jpeg    " class="d-block w-100" alt="">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Sonrisas que Inspiran</h5>
-            </div>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
 
@@ -399,13 +383,13 @@
 
           <div class="carousel-item active">
             <video class="d-block w-100" controls>
-              <source src="Videos/WhatsApp Video 2026-02-17 at 8.06.13 PM (1).mp4   " type="video/mp4">
+              <source src="Videos/WhatsApp Video 2026-02-17 at 8.06.13 PM (1).mp4" type="video/mp4">
             </video>
           </div>
 
           <div class="carousel-item">
             <video class="d-block w-100" controls>
-              <source src="Videos/WhatsApp Video 2026-02-17 at 8.06.13 PM.mp4   " type="video/mp4">
+              <source src="Videos/WhatsApp Video 2026-02-17 at 8.06.13 PM.mp4" type="video/mp4">
             </video>
           </div>
 
@@ -450,21 +434,16 @@
       var videos = $(this).find('video');
       videos.each(function () {
         this.pause();
-
       });
     });
   </script>
-<!-- MODAL IMAGEN / VIDEO -->
-<div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img class="lightbox-content" id="lightbox-img">
-  <video class="lightbox-content" id="lightbox-video" controls></video>
-</div>
+
+  <!-- MODAL IMAGEN / VIDEO -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <video class="lightbox-content" id="lightbox-video" controls></video>
+  </div>
 
 </body>
-</html>
-
-
-
-
 </html>
