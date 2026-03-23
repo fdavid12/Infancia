@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Adward</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/css-circular-prog-bar.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+   .carousel-item img,
+.carousel-item video {
+  width: 100%;
+  height: 600px;
+  object-fit: cover; /* Llena sin deformar */
+  border-radius: 15px;
+}
+/* Lightbox fondo oscuro */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  text-align: center;
+}
+
+/* Imagen y video grande */
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80vh;
+  margin-top: 40px;
+  border-radius: 15px;
+}
+
+/* Botón cerrar */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="top_container sub_pages">
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+  <span style="color: #28a745;">Asociación Amor y Paz</span>
+</a>
+
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">INICIO</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/Quienes Somos.html">QUIENES SOMOS</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/Talento.html">TALENTO HUMANO</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/NUESTRO PROGRAMA.html">NUESTRO PROGRAMA</a>
+                </li>
+
+                
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+  <!-- FIN HEADER -->
+
+
+  <!-- ================= GALERÍA IMÁGENES ================= -->
+  <section class="teacher_section layout_padding-bottom">
+    <div class="container text-center">
+
+      <h2>Galería de Momentos</h2>
+      <p>
+        Compartimos algunos momentos especiales vividos junto a nuestros niños y niñas
+        en el Hogar Asociación Amor y Paz.
+      </p>
+
+      <div id="galeriaCarousel" class="carousel slide mt-4" data-ride="carousel">
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <img src="imagenes Nuevas/2.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Aprendiendo con Amor</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.10.53 PM.jpeg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Momentos de Lectura</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.10.53 PM (2).jpeg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Creatividad y Arte</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.10.53 PM (1).jpeg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.09.08 PM.jpeg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.59 PM.jpeg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.59 PM (2).jpeg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.59 PM (1).jpeg   " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.26 PM.jpeg   " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.26 PM (2).jpeg  " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.25 PM.jpeg   " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.25 PM.jpeg  " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.25 PM (1).jpeg   " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+            <div class="carousel-item">
+            <img src="imagenes Nuevas/recuerdosssss.jpeg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.10.53 PM (1).jpeg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/recuerdossss.jpeg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/recuerdosss.jpeg  " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/recuerdoss.jpeg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/IMG-20250723-WA0006.jpg  " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/IMG-20250723-WA0005.jpg    " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/9.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/7.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/4.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/2.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.10.53 PM.jpeg   " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/actividades especiales.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/cuidado integraljpg.jpg      " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/tumba.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/uwu.jpg    " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/uwa.jpg " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/uwe.jpg  " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="imagenes Nuevas/WhatsApp Image 2026-02-17 at 8.07.25 PM.jpeg    " class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sonrisas que Inspiran</h5>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <a class="carousel-control-prev" href="#galeriaCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#galeriaCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- FIN GALERÍA IMÁGENES -->
+
+
+  <!-- ================= GALERÍA VIDEOS ================= -->
+  <section class="teacher_section layout_padding-bottom">
+    <div class="container text-center">
+
+      <h2>Galería en Video</h2>
+      <p>
+        Compartimos algunos momentos especiales en video junto a nuestros niños y niñas.
+      </p>
+
+      <div id="videoCarousel" class="carousel slide mt-4" data-ride="carousel">
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <video class="d-block w-100" controls>
+              <source src="Videos/WhatsApp Video 2026-02-17 at 8.06.13 PM (1).mp4   " type="video/mp4">
+            </video>
+          </div>
+
+          <div class="carousel-item">
+            <video class="d-block w-100" controls>
+              <source src="Videos/WhatsApp Video 2026-02-17 at 8.06.13 PM.mp4   " type="video/mp4">
+            </video>
+          </div>
+
+          <div class="carousel-item">
+            <video class="d-block w-100" controls>
+              <source src="Videos/WhatsApp Video 2026-02-17 at 8.06.14 PM.mp4" type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- FIN GALERÍA VIDEOS -->
+
+
+  <!-- FOOTER -->
+  <section class="container-fluid footer_section">
+    <p>
+      Copyright © 2026 Hogar Asociación Amor y Paz
+    </p>
+  </section>
+
+
+  <!-- SCRIPTS -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <!-- Pausar video cuando cambia slide -->
+  <script>
+    $('#videoCarousel').on('slide.bs.carousel', function () {
+      var videos = $(this).find('video');
+      videos.each(function () {
+        this.pause();
+
+      });
+    });
+  </script>
+<!-- MODAL IMAGEN / VIDEO -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+  <video class="lightbox-content" id="lightbox-video" controls></video>
+</div>
+
+</body>
+</html>
+
+
+
+
+</html>
